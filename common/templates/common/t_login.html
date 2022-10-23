@@ -12,14 +12,16 @@
 
     <div id="conteiner">
     <form method="POST" id="form">
+        {% csrf_token %}
         <p>Login</p>
         <label for="user">Username</label><br>
-        <input type="text" id="user" name="user" required><br>
+        <input type="text" id="user" name="t_username" required><br>
         <label for="password">Password</label><br>
-        <input type="password" id="password" name="password"><br><br>
+        <input type="password" id="password" name="t_password"><br><br>
         <label for="remember" class="remember"> &ensp;&ensp; Remember me &ensp;&ensp; </label>
         <input type="checkbox" id="remember" name="Remember">
         <button type="submit">Login</button>
+        {{invalid_data}}
     </form>
     <div id="error"></div>
     </div>
