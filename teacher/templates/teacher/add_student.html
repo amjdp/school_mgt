@@ -104,16 +104,51 @@
                         <button type="submit" class="btn btn-lg btn-dark">Submit</button>
                     </div>
 
+                    
                 </form>
             </div>
         </div>
 
+        <br><br>
+        {{status}}
+
     </section>
 
-    <!--   </div>
-            </div>
-        </div>
-    </section> -->
+   
+    <!-- <script>
+        $(document).ready(function(){
+            $.ajaxSetup({
+            headers: {
+              "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()
+            }
+        })
+            $('#s_mail').change(function(){
+                var email = $('#s_mail').val()
+            $.ajax({
+                type:'POST',
+                url:"{% url 'teacher:e_exist' %}",
+                data:{
+                    'email':email
+
+                },
+                success: function(response){
+                    if (response.status == true )
+                    {
+                        $('#message').html('email exists')
+                        $('#message').css('color','red')
+                    }
+                    else
+                    {
+                        $('#message').html('email available')
+                        $('#message').css('color','black')
+                    }
+                    console.log(response.status)
+                }
+            })    
+            })
+        })
+    </script> -->
+
 
 
 </body>

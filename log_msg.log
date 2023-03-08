@@ -1,0 +1,5 @@
+2022-11-11 14:41:26,452 Exception occured
+Traceback (most recent call last):
+  File "c:\Users\ATHIRA M J\PC\Desktop\python\school_mgt\school_123\student_api\sample_log.py", line 8, in <module>
+    c = a / b
+ZeroDivisionError: division by zero

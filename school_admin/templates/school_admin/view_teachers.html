@@ -21,6 +21,9 @@
             padding-top: 50px;
             width: 1200px;
         }
+        table{
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -30,7 +33,7 @@
 
     <div class="container-fluid main">
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
 
                 <table class="table table-primary table-striped">
                     <tr>
@@ -44,29 +47,20 @@
                         <th>DOB</th>
                         <th>Experience</th>
                     </tr>
+                    {% for teacher in teacher_list %}
                     <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{forloop.counter}}</td>
+                        <td><img src="{{teacher.teacher_profile_picture.url}}" alt="" height="100px" width="100px"></td>
+                        <td>{{teacher.teacher_name | upper}} </td>
+                        <td>{{teacher.teacher_email}}</td>
+                        <td>{{teacher.teacher_address}}</td>
+                        <td>{{teacher.qualification}}</td>
+                        <td>{{teacher.teacher_gender}}</td>
+                        <td>{{teacher.teacher_dob}}</td>
+                        <td>{{teacher.exp}} year{{teacher.exp | pluralize}}</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
+                    {% endfor %}
+                   
                 </table>
 
             </div>

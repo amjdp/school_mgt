@@ -26,7 +26,8 @@ def s_login(request):
         s_password = request.POST['s_password']
 
         try:
-            s_login = Student.objects.get(student_email = s_username, student_password = s_password)   
+            s_login = Student.objects.get(student_email = s_username, student_password = s_password)  
+            request.session['student_id'] = s_login.id  
             return redirect('student:hom')    
         except:
             msg = 'incorrect user name and password' 

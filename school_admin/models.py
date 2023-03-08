@@ -15,3 +15,4 @@ class Teacher(models.Model):
 class AdminLogin(models.Model):
     admin_id = models.CharField(max_length = 25)   # varchar(25)
     admin_pwd = models.CharField(max_length = 30)
+    

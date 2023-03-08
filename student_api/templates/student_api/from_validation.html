@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+
+<body>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Name :</label><input type="text" id="name"><span id="s_name"></span><br><br>
+        
+        <label for="">email :</label><input type="text" id="email"><span id="s_email"></span><br><br>
+        
+        <label for=""> phone :</label><input type="text" id="phone"><span id="s_phone"></span><br><br>
+
+        <label for="">address :</label><input type="text" id="address"><span id="s_address"></span><br><br>
+
+        <label for="">password :</label><input type="text" id="password"><span id="s_password"></span><br><br>
+        <button  onclick="return validate()">submit</button>
+
+    </form>
+    <script>
+
+        function validate() {
+
+            var s_name = document.getElementById("name")
+            var s_email = document.getElementById("email")
+            var s_phone = document.getElementById("phone")
+            var s_address = document.getElementById("address")
+            var s_password = document.getElementById("password")
+            var sp_name = document.getElementById("s_name")
+            var sp_email = document.getElementById("s_email")
+            var sp_phone = document.getElementById("s_phone")
+            var sp_address = document.getElementById("s_address")
+            var sp_password = document.getElementById("s_password")
+            status = 1;
+            
+
+            if(s_name.value == ""){
+                status = 0;
+                sp_name.style.display = 'block';
+                sp_name.style.color = 'red';
+                sp_name.innerHTML = 'Please enter your name';
+            }
+            else{
+                status = 1;
+                sp_name.style.display = 'none';
+            }
+
+            if(s_email.value == ""){
+                status = 0;
+                sp_email.style.display = 'block';
+                sp_email.style.color = 'red';
+                sp_email.innerHTML = 'Please enter your email';
+            }
+            else{
+                status = 1;
+                sp_email.style.display = 'none';
+            }
+
+            if(s_phone.value == ""){
+                status = 0;
+                sp_phone.style.display = 'block';
+                sp_phone.style.color = 'red';
+                sp_phone.innerHTML = 'Please enter your phone';
+            }
+            else{
+                status = 1;
+                sp_phone.style.display = 'none';
+            }
+
+            if(s_address.value == ""){
+                status = 0;
+                sp_address.style.display = 'block';
+                sp_address.style.color = 'red';
+                sp_address.innerHTML = 'Please enter your address';
+            }
+            else{
+                status = 1;
+                sp_address.style.display = 'none';
+            }
+
+            if(s_password.value == ""){
+                status = 0;
+                sp_password.style.display = 'block';
+                sp_password.style.color = 'red';
+                sp_password.innerHTML = 'Please enter your password';
+            }
+            else{
+                status = 1;
+                sp_password.style.display = 'none';
+            }
+
+            if(status == 0){
+                return false;
+            }
+
+
+        }
+       
+
+    </script>
+</body>
+
+</html>

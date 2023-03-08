@@ -45,29 +45,19 @@
                         <th>Class Teacher</th>
                         <th>Parent Name</th>
                     </tr>
+                    {% for student in student_list %}
                     <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{forloop.counter}}</td>
+                        <td><img src="{{student.student_profile_picture.url}}" alt="" height="100px" width="100px"></td>
+                        <td>{{student.student_name}} </td>
+                        <td>{{student.student_email}}</td>
+                        <td>{{student.student_dob}}</td>
+                        <td>{{student.student_phone_number}}</td>
+                        <td>{{student.student_place}}</td>
+                        <td>{{student.teacher.teacher_name}}</td>
+                        <td>{{student.s_parent_name}}</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
+                    {% endfor %}
                 </table>
 
             </div>

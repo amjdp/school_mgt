@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from school_admin. models import Teacher
+from teacher.models import Student
 
 # Create your views here.
 def a_home(request):
@@ -23,10 +24,12 @@ def add_tr(request):
     return render(request,'school_admin/add_teacher.html')
 
 def view_st(request):
-    return render(request,'school_admin/view_student.html')
+    student = Student.objects.all()
+    return render(request,'school_admin/view_student.html',{'student_list':student})
 
 def view_tr(request):
-    return render(request,'school_admin/view_teachers.html')
+    teachers = Teacher.objects.all()
+    return render(request,'school_admin/view_teachers.html',{'teacher_list':teachers})
 
 def chg_pwd(request):
     return render(request,'school_admin/change_password.html')
